@@ -363,3 +363,18 @@ form button:hover {
         border-radius: 10px;
     }
 }
+
+/* 📱 Handy-Layout: nur bestimmte Bereiche linksbündig */
+@media (max-width: 700px) {
+
+    /* Erste Section: "Wir freuen uns riesig..." */
+    section:first-of-type {
+        text-align: left !important;
+    }
+
+    /* Section mit Zusatzinfos */
+    section:nth-of-type(5),
+    section:nth-of-type(6) {
+        text-align: left !important;
+    }
+}
