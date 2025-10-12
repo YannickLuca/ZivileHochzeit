@@ -378,3 +378,21 @@ form button:hover {
         text-align: left !important;
     }
 }
+
+/* 📱 Einheitlich linksbündig für alles ausser Header */
+main, section, footer {
+    text-align: left;
+}
+
+/* Header bleibt zentriert */
+header {
+    text-align: center;
+}
+
+/* Sicherstellen, dass Handy-Layout auch wirklich links bleibt */
+@media (max-width: 700px) {
+    main, section, footer {
+        text-align: left !important;
+    }
+}
+
