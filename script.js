@@ -57,7 +57,7 @@ if (slideshowElement) {
             slideshowElement.src = slideshowImages[currentImageIndex];
             // Bild wieder einblenden
             slideshowElement.style.opacity = 1;
-        }, 1000);
+        }, 1200);
     }
 
     // Alle 3 Sekunden wechseln (langsamer & sanfter)

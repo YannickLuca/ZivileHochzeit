@@ -197,7 +197,7 @@ footer {
 @media (max-width: 700px) {
     .text-bild-container {
         flex-direction: column;
-        text-align: left;
+        text-align: center;
     }
 
     .text-bild-container img {
