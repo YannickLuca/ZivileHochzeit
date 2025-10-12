@@ -1,0 +1,349 @@
+/* 🌿 Global Styles */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #ebdecf; /* sanftes Creme, HINTERGRUND */
+    color: #4a4a4a;
+}
+
+/* 💍 Header Styles */
+header {
+    background: linear-gradient(135deg, #F5F5DC);
+    color: #4a4a4a;
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    border-bottom: 4px solid #CCD5AE;
+}
+
+/* ✨ Titelbild Styling */
+header img {
+    display: block;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+header img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Überschriften im Header */
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: #6b6b6b;
+}
+
+header h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #6b6b6b;
+}
+
+/* 🌸 Main Content */
+main {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    /* background: #F8EDE3; */  /*Rahmen farbe*/
+    border-radius: 16px;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 2rem;
+    background-color: #F5F5DC; /*Farbe vorne beim Main*/
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+section h2 {
+    border-bottom: 2px solid #c5c5c5; /*linie unter titel*/
+    padding-bottom: 0.5rem;
+    color: #6b5f63;
+}
+
+section h3 {
+    color: #6b5f63;
+    margin-top: 1.2rem;
+}
+
+section p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* 📸 Bilder nebeneinander mit gleicher Höhe */
+.bildreihe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap; /* Fällt auf Handy untereinander */
+}
+
+.bildreihe img {
+    width: 48%;
+    aspect-ratio: 4 / 3; /* gleiche Höhe */
+    object-fit: cover; /* schneidet ggf. minimal, aber gleichmäßig */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bildreihe img:hover {
+    transform: scale(1.03);
+}
+
+/* 🗺️ Karten Styling */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 1.5rem 0 2rem;
+    height: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #E9EDC9;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 16px;
+}
+
+/* 🕊️ Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #F5F5DC;
+    color: #555;
+    font-size: 0.9rem;
+    border-top: 3px solid #CCD5AE;
+}
+
+/* 🌸 Slideshow Styling */
+.slideshow-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.slideshow-container img {
+    width: 400px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 1.2s ease-in-out; /* weicher Übergang */
+}
+
+/* 💍 Text rechts, Bild links */
+.text-bild-container {
+    display: flex;
+    align-items: center;       /* vertikal ausgerichtet */
+    justify-content: space-between;
+    gap: 2rem;                 /* Abstand zwischen Text und Bild */
+    margin: 2rem 0;
+    flex-wrap: wrap;           /* Auf Handy untereinander */
+}
+
+.text-bild-container img {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.text-bild-container p {
+    flex: 1;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 📱 Responsive: Auf kleinen Bildschirmen untereinander */
+@media (max-width: 700px) {
+    .text-bild-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-bild-container img {
+        width: 80%;
+    }
+}
+
+/* 💍 Trauzeugen nebeneinander */
+.trauzeugen-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap; /* Damit es auf Handy untereinander fällt */
+    margin-top: 2rem;
+}
+
+.trauzeuge {
+    text-align: center;
+    background-color: #E9EDC9; /* zartes Pastellgrün */
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 230px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trauzeuge:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.trauzeuge img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Damit alle rund gleich aussehen */
+    object-position: center 10%;
+}
+
+.trauzeuge h3 {
+    color: #6b5f63;
+    margin-bottom: 0.5rem;
+}
+
+.trauzeuge p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.trauzeuge a {
+    color: #6b5f63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.trauzeuge a:hover {
+    color: #A48D94;
+}
+
+/* 📱 Auf kleineren Geräten untereinander */
+@media (max-width: 700px) {
+    .trauzeugen-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+form {
+    background-color: #E9EDC9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    color: #6b5f63;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #C4B7BB;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+form button {
+    margin-top: 1rem;
+    background-color: #C4B7BB;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #A48D94;
+}
+
+/* 💍 Countdown */
+#countdown {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #6b5f63;
+    background-color: #E9EDC9;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* ✨ sanfte Animation */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+
+
+/* 📱 Responsive Design */
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header img {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .bildreihe img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .map-container {
+        height: 250px;
+        border-radius: 10px;
+    }
+}

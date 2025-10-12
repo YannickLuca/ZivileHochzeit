@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+    // Inhalt verstecken, bis geprüft
+    document.documentElement.style.visibility = "hidden";
+    try {
+        const token = JSON.parse(localStorage.getItem('guestAccess') || "null");
+        const ok = token && token.ok && (!token.exp || Date.now() < token.exp);
+        if (!ok) {
+        window.location.replace("login.html");
+        } else {
+        document.documentElement.style.visibility = "visible";
+        }
+    } catch(e){
+        window.location.replace("login.html");
+    }
+    </script>
+
+    <header>
+        <h1>Wir Heiraten!</h1>
+        <img src="Pictures/Antrag.jpg" alt="Das Brautpaar" width="800">
+        <h2>26. Juni 2026</h2>
+        <p id="countdown"></p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Wir freuen uns riesig am 26. Juni 2026 mit euch unsere zivile Trauung zu feiern!</h2>
+            <div class="text-bild-container">
+                <img src="Pictures/Chappeli.jpg" alt="Chappeli" width="400">
+                <p>
+                    Das Standesamt wird um 15.45 Uhr starten und wir 
+                    können es kaum erwarten, von euch vor dem Chappeli Volketswil anschliessend 
+                    empfangen zu werden! Gemeinsam wollen wir danach unser neuen Lebensabschnitt als Herr 
+                    und Frau Bachmann mit euch zelebrieren und im familiären Rahmen in der Waldmannsburg in
+                    Dübendorf bei einem Apéro riche anstossen.
+                </p>
+            </div>
+
+        </section>
+
+
+
+        <section>
+            <h2>Ablauf</h2>
+            <h3>Eintreffen / Zivile Trauung</h3>
+            <p>Trefft bitte spätestens um 15:30 Uhr vor dem Chappeli ein und geniesst einen Welcome-Drink, 
+                während das Brautpaar den Bund der Ehe eingeht von 15:45 Uhr bis 16:15 Uhr. Das Brautpaar 
+                freut sich, von euch nach dem Standesamt empfangen zu werden!
+            </p>
+
+            <p>Bitte beachtet, dass nur enge Familie und Trauzeugen bei der zivilen Trauung im Raum 
+                anwesend sind.</p>
+            <h3>Apéro</h3>
+            <p>Ab ca. 16:30 Uhr findet ein Apéro riche im Restaurant Waldmannsburg in Dübendorf statt. 
+                Das Brautpaar freut sich, euch dazu einzuladen und mit euch das junge Glück zu feiern.</p>
+
+            <div class="bildreihe">
+                <img src="Pictures/AperoWaldmannsburg.jpeg" width="400">
+                <img src="Pictures/SchlossgartenWaldmannsburg.jpeg" width="400">
+            </div>
+        </section>
+
+        <section>
+            <h2>Anreise</h2>
+
+            <h3>Chappeli Volketswil</h3>
+            <p>Das Standesamt findet im Chappeli Volketswil statt. Wir freuen uns, wenn ihr uns dort nach der Trauung empfangt!</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d742.7091406324382!2d8.673804080711026!3d47.38920616903823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa386da2b4ac1%3A0x1bfa5adfeb5412cd!2sQuartieranlage%20Chappeli!5e1!3m2!1sde!2sch!4v1760211593978!5m2!1sde!2sch" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <h3>Waldmannsburg Dübendorf</h3>
+            <p>Nach der Trauung feiern wir gemeinsam in der Waldmannsburg in Dübendorf bei einem Apéro riche. Parkplätze sind direkt vor Ort vorhanden.</p>
+                <div class="map-container">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6880.264406004665!2d8.614181258915131!3d47.37858695214677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa13f8e64b05f%3A0x1862367fc281177f!2sRestaurant%20Waldmannsburg!5e1!3m2!1sde!2sch!4v1760212568072!5m2!1sde!2sch" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2>Unsere Trauzeugen und Vertrauenspersonen</h2>
+            <p>Simona und Philipp stehen euch gerne für eure Anliegen zur Verfügung. 
+                Falls Unklarheiten bestehen oder ihr sonstige Fragen habt, meldet euch ungeniert bei unseren Lieben:</p>
+
+            <div class="trauzeugen-container">
+                <!-- 💐 Simona -->
+                <div class="trauzeuge">
+                    <img src="Pictures/Simona.jpg" alt="Simona" width="200">
+                    <h3>Simona</h3>
+                    <p>📞 +41 79 430 81 30<br>
+                    ✉️ <a href="mailto:simona.patt@gmx.ch">simona.patt@gmx.ch</a></p>
+                </div>
+
+                <!-- 🤵 Philipp -->
+                <div class="trauzeuge">
+                    <img src="Pictures/Philipp.jpg" alt="Philipp" width="200">
+                    <h3>Philipp</h3>
+                    <p>📞 +41 79 222 09 62<br>
+                    ✉️ <a href="mailto:philipp.moebus@gmx.ch">philipp.moebus@gmx.ch</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="anmeldung">
+            <h2>Anmeldung zur Hochzeit</h2>
+            <p>Bitte fülle das Formular für dich bzw. euch aus bis 15.12.2025.</p>
+
+            <form id="anmeldeFormular">
+                <label for="name">Name/n:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="anzahl">Anzahl Personen:</label><br>
+                <input type="number" id="anzahl" name="anzahl" min="1" max="5" required><br><br>
+
+                <label for="nachricht">Vegan, Vegetarisch (ovo-lacto),  Lacto-vegetarisch, Ovo-vegetarisch,
+                  Pescetarisch, Flexitarisch,Roh-vegan, allgemein Allergien oder einfach nur eine 
+                  freundliche Nachricht:</label><br>
+                <textarea id="nachricht" name="nachricht" rows="3"></textarea><br><br>
+
+                <button type="submit">Anmelden 💌</button>
+            </form>
+
+            <p id="erfolgsmeldung" style="color: green; display: none;">
+                ✅ Vielen Dank! Deine/Eure Anmeldung wurde erfolgreich gespeichert.
+            </p>
+        </section>
+
+        <section>
+            <h2>Zusatzinfos</h2>
+            <div class="text-bild-container">
+                <img src="Pictures/Titelbild.jpg" alt="Danke" width="400">
+                
+                <p>Wir freuen uns sehr, diesen besonderen Tag mit euch zu feiern – eure Anwesenheit
+                 ist für uns das schönste Geschenk.
+                 Da wir im August in Colmegna am Lago Maggiore auch unsere freie Trauung mit euch
+                 feiern dürfen, verzichten wir hier bewusst auf Geschenke. Wir freuen uns 
+                 einfach auf eine unvergessliche Zeit mit euch!</p>
+            </div>
+        </section>
+
+
+        <section>
+            <h3>Wir freuen uns mit euch anzustossen! Bis dann!</h3>
+            <!-- 🌸 Dynamische Slideshow -->
+            <div class="slideshow-container">
+                <img id="slideshow" src="Pictures/Tanz1.JPG" alt="Tanzbilder Slideshow" width="800">
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 & 2026 - Luana & Yannick
+    </footer>
+<!-- Firebase + eigene Skripte -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBSAz8RLSxA8EHpuZUKm-2dIIiv8DhW71c",
+    authDomain: "hochzeitchappeli.firebaseapp.com",
+    projectId: "hochzeitchappeli",
+    storageBucket: "hochzeitchappeli.firebasestorage.app",
+    messagingSenderId: "886897882021",
+    appId: "1:886897882021:web:346fb0dab1cc5bf96bee4c"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Formular speichern
+  const form = document.getElementById("anmeldeFormular");
+  const erfolgsmeldung = document.getElementById("erfolgsmeldung");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = form.name.value;
+      const anzahl = form.anzahl.value;
+      const nachricht = form.nachricht.value;
+
+      try {
+        await addDoc(collection(db, "anmeldungen"), {
+          name,
+          anzahl,
+          nachricht,
+          timestamp: new Date()
+        });
+
+        erfolgsmeldung.style.display = "block";
+        form.reset();
+      } catch (error) {
+        alert("Fehler beim Speichern 😔 " + error.message);
+      }
+    });
+  }
+</script>
+
+
+<!-- Dein normales Skript -->
+<script src="script.js"></script>
+</body>
+</html>

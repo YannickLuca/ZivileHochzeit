@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zugang – Hochzeit Luana & Yannick</title>
+  <style>
+    :root{
+      --bg:#E9EDC9; --card:#FFFFFF; --accent:#C4B7BB; --text:#4a4a4a;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Georgia', serif;
+      margin:0; min-height:100svh;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg,#E9EDC9,#E7F1DC);
+      color:var(--text);
+      padding:1.5rem;
+    }
+    .card{
+      width:100%; max-width:420px;
+      background:var(--card);
+      border-radius:16px;
+      padding:2rem;
+      box-shadow:0 10px 24px rgba(0,0,0,.1);
+      text-align:center;
+      animation:fade .6s ease;
+    }
+    h1{margin:0 0 .25rem; font-size:1.6rem; color:#6b5f63}
+    p{margin:.25rem 0 1.25rem}
+    input[type="password"]{
+      width:100%; padding:.8rem 1rem; border-radius:10px;
+      border:1px solid #d9cfd3; font-size:1rem; outline:none;
+    }
+    button{
+      margin-top:.9rem; width:100%;
+      padding:.8rem 1rem; border:0; border-radius:10px;
+      background:var(--accent); color:#fff; font-size:1rem; cursor:pointer;
+      transition:transform .12s ease, opacity .12s ease;
+    }
+    button:hover{transform:translateY(-1px)}
+    .msg{margin-top:.7rem; font-size:.95rem; min-height:1.4em}
+    .err{color:#b74a5a}
+    .hint{font-size:.85rem; color:#6b6b6b; margin-top:.6rem}
+    @keyframes fade{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔒 Gäste-Zugang</h1>
+    <p>Bitte gib das Passwort ein.</p>
+    <form id="loginForm">
+      <input type="password" id="pwInput" placeholder="Passwort" autocomplete="current-password" required />
+      <button type="submit">Weiter</button>
+      <div class="msg" id="msg"></div>
+      <div class="hint">Tipp: Passwort an eure Gäste weitergeben 😊</div>
+    </form>
+  </div>
+
+  <script>
+    // Passwort hier festlegen
+    const PASSWORD = "chappeli2026";
+
+    // Optional: Gültigkeitsdauer (in Stunden). 0 = nur aktuelle Sitzung.
+    const REMEMBER_HOURS = 24;
+
+    const form = document.getElementById('loginForm');
+    const input = document.getElementById('pwInput');
+    const msg = document.getElementById('msg');
+
+    // Wenn bereits freigeschaltet wurde, direkt weiter
+    try {
+      const token = JSON.parse(localStorage.getItem('guestAccess') || "null");
+      if (token && token.ok && (!token.exp || Date.now() < token.exp)) {
+        window.location.href = "index.html";
+      }
+    } catch(_) {}
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pw = input.value.trim();
+
+      if (pw === PASSWORD) {
+        const data = { ok: true };
+        if (REMEMBER_HOURS > 0) {
+          data.exp = Date.now() + REMEMBER_HOURS * 60 * 60 * 1000;
+        }
+        localStorage.setItem('guestAccess', JSON.stringify(data));
+        window.location.href = "index.html";
+      } else {
+        msg.textContent = "❌ Falsches Passwort!";
+        msg.className = "msg err";
+        input.value = "";
+        input.focus();
+      }
+    });
+  </script>
+</body>
+</html>
