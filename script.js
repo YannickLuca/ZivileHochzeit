@@ -61,7 +61,7 @@ if (slideshowElement) {
     }
 
     // Alle 3 Sekunden wechseln (langsamer & sanfter)
-    setInterval(changeImage, 3000);
+    setInterval(changeImage, 2500);
 }
 
 // 💞 Countdown zur Hochzeit

@@ -197,7 +197,7 @@ footer {
 @media (max-width: 700px) {
     .text-bild-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
 
     .text-bild-container img {
@@ -361,21 +361,6 @@ form button:hover {
     .map-container {
         height: 250px;
         border-radius: 10px;
-    }
-}
-
-/* 📱 Handy-Layout: nur bestimmte Bereiche linksbündig */
-@media (max-width: 700px) {
-
-    /* Erste Section: "Wir freuen uns riesig..." */
-    section:first-of-type {
-        text-align: left !important;
-    }
-
-    /* Section mit Zusatzinfos */
-    section:nth-of-type(5),
-    section:nth-of-type(6) {
-        text-align: left !important;
     }
 }
 
