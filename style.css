@@ -143,15 +143,31 @@ footer {
     margin: 2rem 0;
 }
 
+.slideshow-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
 .slideshow-container img {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;        /* beschränkt es auf Desktop */
     height: auto;
     border-radius: 16px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     object-fit: cover;
     opacity: 1;
-    transition: opacity 1.2s ease-in-out; /* weicher Übergang */
+    transition: opacity 1.2s ease-in-out;
 }
+
+/* 📱 Für Handys */
+@media (max-width: 500px) {
+    .slideshow-container img {
+        width: 100%;        /* immer volle Breite */
+        max-width: 100%;    /* keine fixe Begrenzung */
+        border-radius: 10px;
+    }
+}
+
 
 /* 💍 Text rechts, Bild links */
 .text-bild-container {
