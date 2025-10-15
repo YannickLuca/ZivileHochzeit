@@ -1,41 +1,37 @@
-/* 🌿 Global Styles */
+/* 🌿 ========== GLOBAL STYLES ========== */
 body {
     font-family: 'Georgia', serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #ebdecf; /* sanftes Creme, HINTERGRUND */
+    background-color: #ebdecf; /* sanftes Creme */
     color: #4a4a4a;
 }
 
-/* 💍 Header Styles */
+/* Alles linksbündig außer Header */
+main, section, footer {
+    text-align: left;
+}
+
+header {
+    text-align: center;
+}
+
+/* Für Mobilgeräte sicherstellen */
+@media (max-width: 700px) {
+    main, section, footer {
+        text-align: left !important;
+    }
+}
+
+/* 💍 ========== HEADER ========== */
 header {
     background: linear-gradient(135deg, #F5F5DC);
     color: #4a4a4a;
-    text-align: center;
     padding: 2rem 1rem 3rem;
     border-bottom: 4px solid #CCD5AE;
 }
 
-/* ✨ Titelbild Styling */
-header img {
-    display: block;
-    margin: 1.5rem auto;
-    width: 90%;
-    max-width: 700px;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-header img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Überschriften im Header */
 header h1 {
     margin: 0;
     font-size: 3rem;
@@ -49,19 +45,34 @@ header h2 {
     color: #6b6b6b;
 }
 
-/* 🌸 Main Content */
+/* ✨ Titelbild */
+header img {
+    display: block;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+header img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌸 ========== MAIN CONTENT ========== */
 main {
     padding: 3rem 2rem;
     max-width: 900px;
     margin: 3rem auto;
-    /* background: #F8EDE3; */  /*Rahmen farbe*/
-    border-radius: 16px;
 }
 
 section {
     margin-bottom: 2.5rem;
     padding: 1.5rem 2rem;
-    background-color: #F5F5DC; /*Farbe vorne beim Main*/
+    background-color: #F5F5DC;
     border-radius: 12px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -71,7 +82,7 @@ section:hover {
 }
 
 section h2 {
-    border-bottom: 2px solid #c5c5c5; /*linie unter titel*/
+    border-bottom: 2px solid #c5c5c5;
     padding-bottom: 0.5rem;
     color: #6b5f63;
 }
@@ -86,20 +97,20 @@ section p {
     color: #555;
 }
 
-/* 📸 Bilder nebeneinander mit gleicher Höhe */
+/* 📸 ========== BILDERREIHEN ========== */
 .bildreihe {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 1.5rem;
-    flex-wrap: wrap; /* Fällt auf Handy untereinander */
 }
 
 .bildreihe img {
     width: 48%;
-    aspect-ratio: 4 / 3; /* gleiche Höhe */
-    object-fit: cover; /* schneidet ggf. minimal, aber gleichmäßig */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -109,9 +120,8 @@ section p {
     transform: scale(1.03);
 }
 
-/* 🗺️ Karten Styling */
+/* 🗺️ ========== KARTE ========== */
 .map-container {
-    position: relative;
     overflow: hidden;
     border-radius: 16px;
     margin: 1.5rem 0 2rem;
@@ -124,59 +134,16 @@ section p {
     width: 100%;
     height: 100%;
     border: 0;
-    border-radius: 16px;
 }
 
-/* 🕊️ Footer */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #F5F5DC;
-    color: #555;
-    font-size: 0.9rem;
-    border-top: 3px solid #CCD5AE;
-}
-
-/* 🌸 Slideshow Styling */
-.slideshow-container {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.slideshow-container {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.slideshow-container img {
-    width: 100%;
-    max-width: 500px;        /* beschränkt es auf Desktop */
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    object-fit: cover;
-    opacity: 1;
-    transition: opacity 1.2s ease-in-out;
-}
-
-/* 📱 Für Handys */
-@media (max-width: 500px) {
-    .slideshow-container img {
-        width: 100%;        /* immer volle Breite */
-        max-width: 100%;    /* keine fixe Begrenzung */
-        border-radius: 10px;
-    }
-}
-
-
-/* 💍 Text rechts, Bild links */
+/* 💍 ========== TEXT-BILD-KOMBI ========== */
 .text-bild-container {
     display: flex;
-    align-items: center;       /* vertikal ausgerichtet */
+    align-items: center;
     justify-content: space-between;
-    gap: 2rem;                 /* Abstand zwischen Text und Bild */
+    flex-wrap: wrap;
+    gap: 2rem;
     margin: 2rem 0;
-    flex-wrap: wrap;           /* Auf Handy untereinander */
 }
 
 .text-bild-container img {
@@ -193,31 +160,18 @@ footer {
     line-height: 1.6;
 }
 
-/* 📱 Responsive: Auf kleinen Bildschirmen untereinander */
-@media (max-width: 700px) {
-    .text-bild-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .text-bild-container img {
-        width: 80%;
-    }
-}
-
-/* 💍 Trauzeugen nebeneinander */
+/* 💕 ========== TRAUZEUGEN ========== */
 .trauzeugen-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 3rem;
-    flex-wrap: wrap; /* Damit es auf Handy untereinander fällt */
     margin-top: 2rem;
 }
 
 .trauzeuge {
     text-align: center;
-    background-color: #E9EDC9; /* zartes Pastellgrün */
+    background-color: #E9EDC9;
     border-radius: 12px;
     padding: 1.5rem;
     width: 230px;
@@ -235,7 +189,7 @@ footer {
     border-radius: 50%;
     margin-bottom: 1rem;
     object-fit: cover;
-    aspect-ratio: 1 / 1; /* Damit alle rund gleich aussehen */
+    aspect-ratio: 1 / 1;
     object-position: center 10%;
 }
 
@@ -260,15 +214,7 @@ footer {
     color: #A48D94;
 }
 
-/* 📱 Auf kleineren Geräten untereinander */
-@media (max-width: 700px) {
-    .trauzeugen-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-}
-
+/* 💌 ========== FORMULAR ========== */
 form {
     background-color: #E9EDC9;
     padding: 1.5rem;
@@ -310,7 +256,33 @@ form button:hover {
     background-color: #A48D94;
 }
 
-/* 💍 Countdown */
+/* 🕊️ ========== FOOTER ========== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #F5F5DC;
+    color: #555;
+    font-size: 0.9rem;
+    border-top: 3px solid #CCD5AE;
+}
+
+/* 💫 ========== SLIDESHOW ========== */
+.slideshow-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.slideshow-container img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* 💍 ========== COUNTDOWN ========== */
 #countdown {
     margin-top: 1rem;
     font-size: 1.3rem;
@@ -324,60 +296,21 @@ form button:hover {
     animation: pulse 2s infinite ease-in-out;
 }
 
-/* ✨ sanfte Animation */
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.9; }
+    0%, 100% { transform: scale(1); opacity: 0.9; }
     50% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.9; }
 }
 
-
-
-/* 📱 Responsive Design */
+/* 📱 ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 700px) {
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header img {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    main {
-        padding: 1.5rem;
-    }
-
-    section {
-        padding: 1rem;
-    }
-
-    .bildreihe img {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-    }
-
-    .map-container {
-        height: 250px;
-        border-radius: 10px;
-    }
+    header h1 { font-size: 2rem; }
+    header img { width: 100%; border-radius: 0; }
+    main { padding: 1.5rem; }
+    section { padding: 1rem; }
+    .bildreihe img { width: 100%; aspect-ratio: 16 / 9; }
+    .map-container { height: 250px; border-radius: 10px; }
+    .text-bild-container { flex-direction: column; text-align: center; }
+    .text-bild-container img { width: 80%; }
+    .trauzeugen-container { flex-direction: column; gap: 2rem; align-items: center; }
+    .slideshow-container img { max-width: 100%; border-radius: 10px; }
 }
-
-/* 📱 Einheitlich linksbündig für alles ausser Header */
-main, section, footer {
-    text-align: left;
-}
-
-/* Header bleibt zentriert */
-header {
-    text-align: center;
-}
-
-/* Sicherstellen, dass Handy-Layout auch wirklich links bleibt */
-@media (max-width: 700px) {
-    main, section, footer {
-        text-align: left !important;
-    }
-}
-
